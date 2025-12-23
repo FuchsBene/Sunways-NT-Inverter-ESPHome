@@ -16,10 +16,10 @@ Parts of the protocol are based on [@adangel's](https://github.com/adangel/) wor
 **Seeed Studio Breakout Board Documentation:**  
 https://wiki.seeedstudio.com/XIAO-RS485-Expansion-Board/  
 
-**Sunways Manual - German**  
+**Sunways Manual - German:**  
 https://sunways-service.com/wp-content/uploads/2024/09/Sunways-NT-2500.NT-5000-Manual-09-10-DE.pdf
 
-**Sunways Manual - English**  
+**Sunways Manual - English:**  
 https://dn721608.ca.archive.org/0/items/manualsonline-id-bf6c9f8b-624d-404e-a731-8853180bce40/bf6c9f8b-624d-404e-a731-8853180bce40.pdf
 
 
