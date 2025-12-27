@@ -8,16 +8,17 @@
 - **Stop bits:** 1
 - **Slave addressing (RS485):** 1-99
 
+**Note:** For RS232 communication, the slave address ```0x01``` should be used.
 
 ## Request Frame (5 Bytes)
 
-| Byte Position | Function          |
-| ------------- | ----------------- |
-| 0             | Header (0x00)     |
-| 1             | Slave Address     |
-| 2             | Command           |
-| 3             | Block Number      |
-| 4             | Checksum          |
+| Byte Position | Function            |
+| ------------- | ------------------- |
+| 0             | Header (=```0x00``` |
+| 1             | Slave Address       |
+| 2             | Command             |
+| 3             | Block Number        |
+| 4             | Checksum            |
 
 
 ## Read Commands
@@ -74,3 +75,4 @@
 
 **Checksum = (sum of all data bytes) % 256**  
 Only the checksum byte itself is excluded from the sum.
+
