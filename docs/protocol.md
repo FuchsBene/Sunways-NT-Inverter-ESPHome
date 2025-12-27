@@ -23,6 +23,21 @@
 
 ## Read Commands
 
+### Read Error Memory (```0x01```)
+  - **Block Number:** 1-5 (2 errors per block) -> 10 memory slots in total
+  - **Response:**
+    | Byte Position | Function          | Conversion        |
+    | ------------- | ----------------- | ----------------- |
+    | 0             | Month             | to decimal        |
+    | 1             | Day               | to decimal        |
+    | 2             | Hour              | to decimal        |
+    | 3             | Minute            | to decimal        |
+    | 4             | Error Code        | *unknown*         |
+    | 5             | Year (since 2000) | to decimal        |
+    | 6-11          | Next Error        |                   |
+    | 13            | Checksum          |                   |
+
+
 ### Read Online Values (```0x02```)
   - **Block Number:**
       - Single-Phase Inverters (NT5000): 1
@@ -88,5 +103,6 @@
 
 **Checksum = (sum of all data bytes) % 256**  
 Only the checksum byte itself is excluded from the sum.
+
 
 
