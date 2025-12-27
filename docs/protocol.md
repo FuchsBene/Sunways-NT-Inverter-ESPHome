@@ -30,7 +30,7 @@
   - **Response:**
     | Byte Position | Function          | Conversion   | Calculation                          | Unit   |
     | ------------- | ----------------- | ------------ | ------------------------------------ | ------ |
-    | 0             | UDC (DC voltage)  | to decimal   | buffer[0] * 2.8 + $udc-gradient      | V      |
+    | 0             | UDC (DC voltage)  | to decimal   | buffer[0] * 2.8 + $udc-offset        | V      |
     | 1             | IDC (DC current)  | to decimal   | buffer[1] * 0.08                     | A      |
     | 2             | UAC (AC voltage)  | to decimal   | buffer[2] + 100                      | V      |
     | 3             | IAC (AC current)  | to decimal   | buffer[3] * 0.12                     | A      |
@@ -43,9 +43,22 @@
 
     **Note:** If the temperature or heat flux sensor is not connected, the buffer value is ```0x01```.
 
-    **$udc-gradient:**
+    **$udc-offset:**
       - Single-Phase Inverters: 100
       - Three-Phase Inverters: 200
+
+
+### Read Date + Time (```0x06```)
+  - **Block Number:** 1
+  - **Response:**
+    | Byte Position | Function          | Conversion        |
+    | ------------- | ----------------- | ----------------- |
+    | 0             | Year (since 2000) | to decimal        |
+    | 1             | Month             | to decimal        |
+    | 2             | Day               | to decimal        |
+    | 3             | Hour              | to decimal        |
+    | 4             | Minute            | to decimal        |
+    | 12            | Checksum          |                   |
 
 
 ### Read Serial Number (```0x08```)
@@ -75,4 +88,5 @@
 
 **Checksum = (sum of all data bytes) % 256**  
 Only the checksum byte itself is excluded from the sum.
+
 
