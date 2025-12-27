@@ -63,6 +63,18 @@
       - Three-Phase Inverters: 200
 
 
+### Read Day Values (```0x03```)
+  *not yet implemented*
+
+
+### Read Month Values (```0x04```)
+  *not yet implemented*
+
+
+### Read Minute Values (```0x05```)
+  *not yet implemented*
+  
+
 ### Read Date + Time (```0x06```)
   - **Block Number:** 1
   - **Response:**
@@ -103,6 +115,7 @@
 
 **Checksum = (sum of all data bytes) % 256**  
 Only the checksum byte itself is excluded from the sum.
+
 
 
 
